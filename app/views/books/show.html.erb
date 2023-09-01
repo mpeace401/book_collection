@@ -1,6 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @book %>
+<strong>Price:</strong>
+<%= @book.price %>
+<strong>Date Published:</strong>
+<%= @book.published_date %>
+<br />
 
 <div>
   <%= link_to "Edit this book", edit_book_path(@book) %> |
