@@ -3,11 +3,10 @@
 <h1>Book Details</h1>
 
 <%= render @book %>
+<!--
 <strong>Price:</strong>
-<%= @book.price %>
-<strong>Date Published:</strong>
-<%= @book.published_date %>
-
+<strong>Date Published:</strong>\
+-->
 <div>
   <%= link_to "Edit this book", edit_book_path(@book) %> |
   <%= link_to "Delete this book", delete_book_path(@book) %> |
