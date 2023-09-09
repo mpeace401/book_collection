@@ -1,10 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @book %>
+<h1>Book Details</h1>
 
+<%= render @book %>
+<!--
+<strong>Price:</strong>
+<strong>Date Published:</strong>\
+-->
 <div>
   <%= link_to "Edit this book", edit_book_path(@book) %> |
+  <%= link_to "Delete this book", delete_book_path(@book) %> |
   <%= link_to "Back to books", books_path %>
-
-  <%= button_to "Destroy this book", @book, method: :delete %>
 </div>

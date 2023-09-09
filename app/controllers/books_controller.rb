@@ -27,6 +27,7 @@ class BooksController < ApplicationController
       if @book.save
         format.html { redirect_to book_url(@book), notice: "Book was successfully created." }
         format.json { render :show, status: :created, location: @book }
+        flash[:notice] = "Successfully created book"
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @book.errors, status: :unprocessable_entity }
@@ -48,7 +49,12 @@ class BooksController < ApplicationController
   end
 
   # DELETE /books/1 or /books/1.json
+  def delete
+    @book = Book.find(params[:id])
+  end
+
   def destroy
+    @book = Book.find(params[:id])
     @book.destroy
 
     respond_to do |format|
@@ -65,6 +71,7 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:title)
+      params.require(:book).permit(:title, :author, :price)
+      #:author, :price, :published_date
     end
 end
